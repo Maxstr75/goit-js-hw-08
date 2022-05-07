@@ -15,7 +15,7 @@ const feedbackFormState = {};
 onSavedTextareaInput();
 
 function onInputForm(e) {
-    formData[e.target.name] = e.target.value;
+    feedbackFormState[e.target.name] = e.target.value;
     console.log(feedbackFormState);
   localStorage.setItem('feedbackFormState', JSON.stringify(feedbackFormState));
 };
