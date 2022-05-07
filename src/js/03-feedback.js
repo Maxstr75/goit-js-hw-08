@@ -10,9 +10,9 @@ console.dir(refs.email);
 refs.form.addEventListener('input', throttle(onInputForm, 500));
 refs.form.addEventListener('submit', onFormSubmit);
 
-const feedbackFormState = {};
+const feedbackFormState = localStorage.getItem('feedbackFormState') ? JSON.parse(localStorage.getItem('feedbackFormState')) : {};
 
-onSavedTextareaInput();
+// onSavedTextareaInput();
 
 function onInputForm(e) {
     feedbackFormState[e.target.name] = e.target.value;
@@ -35,8 +35,13 @@ function onSavedTextareaInput(e) {
     console.log(typeof savedMessage);
 
     if (savedMessage) {
-        refs.email.value = savedMessage.email;
-        refs.textarea.value = savedMessage.message;
+        if (savedMessage.email) {
+            refs.email.value = savedMessage.email;
+        };
+        
+        if (savedMessage.message) {
+            refs.textarea.value = savedMessage.message; 
+        };
     }
 };
 
