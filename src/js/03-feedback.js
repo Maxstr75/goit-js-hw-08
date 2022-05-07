@@ -35,7 +35,7 @@ function onSavedTextareaInput(e) {
     console.log(typeof savedMessage);
 
     if (savedMessage) {
-        refs.email.textContent = savedMessage.email;
+        refs.email.value = savedMessage.email;
         refs.textarea.textContent = savedMessage.message;
     }
 };
