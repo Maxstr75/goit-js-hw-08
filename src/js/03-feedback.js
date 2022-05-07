@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle';
 const refs = {
     form: document.querySelector('.feedback-form'),
     textarea: document.querySelector('.feedback-form textarea'),
-    email: document.querySelector('feedback-form email')
+    email: document.querySelector('feedback-form input')
 };
 console.dir(refs.textarea);
 console.dir(refs.email);
@@ -36,7 +36,7 @@ function onSavedTextareaInput(e) {
 
     if (savedMessage) {
         refs.email.value = savedMessage.email;
-        refs.textarea.textContent = savedMessage.message;
+        refs.textarea.value = savedMessage.message;
     }
 };
 
