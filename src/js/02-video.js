@@ -9,5 +9,6 @@ const onPlay = function (data) {
 };
 
 player.on('timeupdate', throttle(onPlay, 1000));
-
-player.setCurrentTime(30.456);
+if (localStorage.getItem(STORAGE_KEY)) {
+  player.setCurrentTime(localStorage.getItem(STORAGE_KEY));
+}
