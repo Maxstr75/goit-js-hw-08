@@ -5,8 +5,8 @@ const refs = {
   textarea: document.querySelector('.feedback-form textarea'),
   email: document.querySelector('feedback-form input'),
 };
-// console.dir(refs.textarea);
-// console.dir(refs.email);
+console.dir(refs.textarea);
+console.dir(refs.email);
 refs.form.addEventListener('input', throttle(onInputForm, 500));
 refs.form.addEventListener('submit', onFormSubmit);
 
