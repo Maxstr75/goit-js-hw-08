@@ -13,7 +13,7 @@ refs.form.addEventListener('submit', onFormSubmit);
 const feedbackFormState = localStorage.getItem('feedbackFormState')
   ? JSON.parse(localStorage.getItem('feedbackFormState'))
   : {};
-// onSavedTextareaInput();
+onSavedTextareaInput();
 
 function onInputForm(e) {
   feedbackFormState[e.target.name] = e.target.value;
@@ -22,7 +22,6 @@ function onInputForm(e) {
 }
 
 function onFormSubmit(e) {
-  //   console.log(JSON.parse(localStorage.getItem('feedbackFormStat')));
   e.preventDefault();
   e.currentTarget.reset();
   localStorage.removeItem('feedbackFormState');
